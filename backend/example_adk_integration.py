@@ -148,8 +148,9 @@ def execute_all_pending_tasks():
         task = manager.get_task(task_id)
         
         # Check if dependencies are completed
+        from app.tasks.task_definitions import TaskStatus as TS
         dependencies_met = all(
-            manager.get_task(dep_id).status.value == "completed"
+            manager.get_task(dep_id).status == TS.COMPLETED
             for dep_id in task.dependencies
         )
         

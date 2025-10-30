@@ -4,15 +4,25 @@ CLI tool for managing ADK agent tasks.
 
 This tool allows you to view, export, and manage tasks that have been
 converted from GitHub issues for execution by ADK agents.
+
+Usage:
+    Run from the repository root:
+    $ python -m backend.task_cli list
+
+    Or with PYTHONPATH set:
+    $ PYTHONPATH=/path/to/agentic-platform python backend/task_cli.py list
 """
 
 import argparse
 import json
 import sys
+import os
 from pathlib import Path
 
-# Add parent directory to path for imports
-sys.path.insert(0, str(Path(__file__).parent.parent))
+# Ensure backend directory is in path for imports
+backend_dir = Path(__file__).parent
+if str(backend_dir) not in sys.path:
+    sys.path.insert(0, str(backend_dir))
 
 from app.tasks.task_manager import get_task_manager
 from app.tasks.task_definitions import TaskStatus, TaskComplexity
