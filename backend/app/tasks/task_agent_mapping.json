@@ -1,0 +1,30 @@
+[
+  {
+    "task_id": "task_0001",
+    "task_title": "Develop execution panel and monitoring dashboard",
+    "agent_name": "FrontendDeveloperAgent",
+    "complexity": "large",
+    "estimated_hours": 40.0
+  },
+  {
+    "task_id": "task_0002",
+    "task_title": "Create ADK configuration module",
+    "agent_name": "ConfigurationAgent",
+    "complexity": "medium",
+    "estimated_hours": 8.0
+  },
+  {
+    "task_id": "task_0003",
+    "task_title": "Implement React frontend with Agent, Tool, and Workflow Builders",
+    "agent_name": "FrontendDeveloperAgent",
+    "complexity": "large",
+    "estimated_hours": 60.0
+  },
+  {
+    "task_id": "task_0004",
+    "task_title": "Build backend service layer for business logic",
+    "agent_name": "BackendDeveloperAgent",
+    "complexity": "medium",
+    "estimated_hours": 24.0
+  }
+]
