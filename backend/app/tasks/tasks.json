@@ -1,0 +1,163 @@
+[
+  {
+    "task_id": "task_0001",
+    "title": "Develop execution panel and monitoring dashboard",
+    "description": "Build React components for live execution monitoring, agent/workflow analytics, and results viewing in frontend/src/components/Execution and frontend/src/components/Dashboard. These components should visualize execution progress, logs, and performance metrics.",
+    "instruction": "Create a comprehensive execution monitoring and dashboard system for the agentic platform. Focus on building React components that provide real-time visibility into agent and workflow executions, including progress tracking, logs, and performance analytics. Ensure the UI is intuitive and provides actionable insights for users.",
+    "acceptance_criteria": [
+      "Execution panel component in frontend/src/components/Execution created",
+      "Dashboard component in frontend/src/components/Dashboard created",
+      "Live execution monitoring with real-time updates implemented",
+      "Agent and workflow analytics visualization completed",
+      "Results viewing interface with detailed logs functional",
+      "Performance metrics display integrated"
+    ],
+    "complexity": "large",
+    "labels": [
+      "enhancement",
+      "frontend",
+      "dashboard"
+    ],
+    "tools_required": [
+      "react",
+      "material-ui",
+      "websocket",
+      "charting-library"
+    ],
+    "dependencies": [],
+    "status": "pending",
+    "github_issue_number": 1,
+    "estimated_hours": 40.0,
+    "subtasks": [
+      "Create Execution panel component structure",
+      "Implement real-time WebSocket connection for live updates",
+      "Build Dashboard layout with analytics widgets",
+      "Create log viewer component with filtering",
+      "Implement performance metrics charts",
+      "Add execution history and state management"
+    ]
+  },
+  {
+    "task_id": "task_0002",
+    "title": "Create ADK configuration module",
+    "description": "Implement the configuration module in backend/app/config.py to manage all environment variables and ADK settings for the platform.",
+    "instruction": "Develop a robust configuration management system for the agentic platform that handles all environment variables, ADK settings, and application configuration. The module should provide type-safe access to configuration values, support multiple environments, and integrate seamlessly with the ADK framework.",
+    "acceptance_criteria": [
+      "Configuration module in backend/app/config.py created",
+      "Environment variable management implemented",
+      "ADK-specific settings configured",
+      "Type-safe configuration access provided",
+      "Support for multiple environments (dev, prod, test)",
+      "Configuration validation and defaults implemented"
+    ],
+    "complexity": "medium",
+    "labels": [
+      "enhancement",
+      "backend",
+      "configuration"
+    ],
+    "tools_required": [
+      "python",
+      "pydantic-settings",
+      "python-dotenv"
+    ],
+    "dependencies": [],
+    "status": "pending",
+    "github_issue_number": 2,
+    "estimated_hours": 8.0,
+    "subtasks": [
+      "Create base configuration class using Pydantic",
+      "Define ADK-specific settings (model, API keys)",
+      "Implement environment variable loading",
+      "Add configuration validation",
+      "Create configuration factory for different environments",
+      "Add unit tests for configuration module"
+    ]
+  },
+  {
+    "task_id": "task_0003",
+    "title": "Implement React frontend with Agent, Tool, and Workflow Builders",
+    "description": "Set up the React frontend in frontend/src/components/ with AgentBuilder, ToolBuilder, and WorkflowBuilder components. These should provide a visual interface for users to create agents, tools, and workflows leveraging ADK functionalities.",
+    "instruction": "Build a comprehensive visual builder interface for the agentic platform that allows users to create and configure agents, tools, and workflows without writing code. The interface should use drag-and-drop functionality, node-based editing, and provide real-time validation. Integrate with the ADK framework to ensure created components are compatible.",
+    "acceptance_criteria": [
+      "AgentBuilder, ToolBuilder, WorkflowBuilder components implemented",
+      "User can create and configure agents, tools, workflows visually",
+      "UI uses Material-UI and ReactFlow for node-based editing",
+      "Frontend communicates with backend API",
+      "Real-time validation of configurations",
+      "Export/import functionality for agents, tools, and workflows"
+    ],
+    "complexity": "large",
+    "labels": [
+      "frontend",
+      "adk",
+      "high-priority",
+      "enhancement"
+    ],
+    "tools_required": [
+      "react",
+      "material-ui",
+      "reactflow",
+      "form-validation"
+    ],
+    "dependencies": [
+      "task_0002"
+    ],
+    "status": "pending",
+    "github_issue_number": 3,
+    "estimated_hours": 60.0,
+    "subtasks": [
+      "Set up React project structure in frontend/",
+      "Implement AgentBuilder component with form inputs",
+      "Create ToolBuilder with visual configuration",
+      "Build WorkflowBuilder using ReactFlow for node-based editing",
+      "Implement drag-and-drop functionality",
+      "Add validation and error handling",
+      "Create API integration layer",
+      "Implement save/load functionality",
+      "Add export/import for configurations"
+    ]
+  },
+  {
+    "task_id": "task_0004",
+    "title": "Build backend service layer for business logic",
+    "description": "Create backend service modules in backend/app/services/ to handle business logic for agents, tools, workflows, and executions. Service layer should interact with ADK modules and database models.",
+    "instruction": "Develop a clean service layer architecture for the agentic platform that separates business logic from API endpoints. Create service classes for managing agents, tools, workflows, and executions. Ensure proper integration with the ADK framework and database models, following SOLID principles and best practices for maintainable code.",
+    "acceptance_criteria": [
+      "Service classes for agent, tool, workflow, execution",
+      "Separation of concerns between API and business logic",
+      "Unit tests for service layer",
+      "Integration with ADK modules",
+      "Database model interactions implemented",
+      "Error handling and validation in place"
+    ],
+    "complexity": "medium",
+    "labels": [
+      "backend",
+      "enhancement"
+    ],
+    "tools_required": [
+      "python",
+      "fastapi",
+      "sqlalchemy",
+      "google-adk"
+    ],
+    "dependencies": [
+      "task_0002"
+    ],
+    "status": "pending",
+    "github_issue_number": 4,
+    "estimated_hours": 24.0,
+    "subtasks": [
+      "Create service layer directory structure",
+      "Implement AgentService class",
+      "Implement ToolService class",
+      "Implement WorkflowService class",
+      "Implement ExecutionService class",
+      "Add database model interactions",
+      "Implement error handling and validation",
+      "Create unit tests for each service",
+      "Add integration tests with ADK"
+    ]
+  }
+]
